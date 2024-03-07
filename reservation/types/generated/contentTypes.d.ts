@@ -793,7 +793,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   info: {
     singularName: 'booking';
     pluralName: 'bookings';
-    displayName: 'booking';
+    displayName: 'reservation';
     description: '';
   };
   options: {
@@ -801,14 +801,14 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   };
   attributes: {
     date: Attribute.DateTime;
-    booked: Attribute.Boolean;
-    meal: Attribute.Enumeration<['Noon', 'Evening']>;
+    confirmation: Attribute.Boolean;
+    meal: Attribute.Enumeration<['Apr\u00E8s-midi', 'Soir']>;
+    number_customer: Attribute.Integer;
     room: Attribute.Relation<
       'api::booking.booking',
       'manyToOne',
       'api::room.room'
     >;
-    number_customer: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -840,7 +840,6 @@ export interface ApiBossBoss extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    last_name: Attribute.String;
     phone: Attribute.BigInteger;
     email: Attribute.Email;
     age: Attribute.Integer;
@@ -849,6 +848,7 @@ export interface ApiBossBoss extends Schema.CollectionType {
       'oneToMany',
       'api::restaurant.restaurant'
     >;
+    last_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -871,12 +871,8 @@ export interface ApiCustomerCustomer extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
     last_name: Attribute.String;
-    age: Attribute.Integer;
-    address: Attribute.Text;
-    email: Attribute.Email;
-    zip_code: Attribute.BigInteger;
+    name: Attribute.String;
     phone: Attribute.BigInteger;
     booking: Attribute.Relation<
       'api::customer.customer',
@@ -949,6 +945,7 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     singularName: 'room';
     pluralName: 'rooms';
     displayName: 'Room';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -957,7 +954,7 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     description: Attribute.String;
     image: Attribute.Media;
     capacity: Attribute.Integer;
-    bookings: Attribute.Relation<
+    reservations: Attribute.Relation<
       'api::room.room',
       'oneToMany',
       'api::booking.booking'

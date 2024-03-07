@@ -12,23 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
     "last_name": {
       "type": "string"
     },
-    "age": {
-      "type": "integer"
-    },
-    "address": {
-      "type": "text"
-    },
-    "email": {
-      "type": "email"
-    },
-    "zip_code": {
-      "type": "biginteger"
+    "name": {
+      "type": "string"
     },
     "phone": {
       "type": "biginteger"

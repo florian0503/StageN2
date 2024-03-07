@@ -15,9 +15,6 @@
     "name": {
       "type": "string"
     },
-    "last_name": {
-      "type": "string"
-    },
     "phone": {
       "type": "biginteger"
     },
@@ -31,6 +28,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::restaurant.restaurant"
+    },
+    "last_name": {
+      "type": "string"
     }
   }
 }

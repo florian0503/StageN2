@@ -4,7 +4,7 @@
   "info": {
     "singularName": "booking",
     "pluralName": "bookings",
-    "displayName": "booking",
+    "displayName": "reservation",
     "description": ""
   },
   "options": {
@@ -15,24 +15,24 @@
     "date": {
       "type": "datetime"
     },
-    "booked": {
+    "confirmation": {
       "type": "boolean"
     },
     "meal": {
       "type": "enumeration",
       "enum": [
-        "Noon",
-        "Evening"
+        "Après-midi",
+        "Soir"
       ]
+    },
+    "number_customer": {
+      "type": "integer"
     },
     "room": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::room.room",
-      "inversedBy": "bookings"
-    },
-    "number_customer": {
-      "type": "integer"
+      "inversedBy": "reservations"
     }
   }
 }
