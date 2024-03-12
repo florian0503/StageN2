@@ -897,6 +897,28 @@ export interface ApiCustomerCustomer extends Schema.CollectionType {
   };
 }
 
+export interface ApiMealMeal extends Schema.SingleType {
+  collectionName: 'meals';
+  info: {
+    singularName: 'meal';
+    pluralName: 'meals';
+    displayName: 'meal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pate_bolognaise: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::meal.meal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::meal.meal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRestaurantRestaurant extends Schema.CollectionType {
   collectionName: 'restaurants';
   info: {
@@ -990,6 +1012,7 @@ declare module '@strapi/types' {
       'api::booking.booking': ApiBookingBooking;
       'api::boss.boss': ApiBossBoss;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::meal.meal': ApiMealMeal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::room.room': ApiRoomRoom;
     }
