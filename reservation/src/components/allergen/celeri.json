@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_celeris",
+  "info": {
+    "displayName": "Celeri"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

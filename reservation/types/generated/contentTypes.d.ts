@@ -897,6 +897,55 @@ export interface ApiCustomerCustomer extends Schema.CollectionType {
   };
 }
 
+export interface ApiMealMeal extends Schema.CollectionType {
+  collectionName: 'meals';
+  info: {
+    singularName: 'meal';
+    pluralName: 'meals';
+    displayName: 'Meal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Date: Attribute.DateTime;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::meal.meal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::meal.meal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPatePate extends Schema.SingleType {
+  collectionName: 'pates';
+  info: {
+    singularName: 'pate';
+    pluralName: 'pates';
+    displayName: 'pate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    Allergen: Attribute.DynamicZone<['allergen.gluten', 'allergen.oeuf']>;
+    meal: Attribute.Relation<'api::pate.pate', 'oneToOne', 'api::meal.meal'>;
+    bool: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::pate.pate', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::pate.pate', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRestaurantRestaurant extends Schema.CollectionType {
   collectionName: 'restaurants';
   info: {
@@ -990,6 +1039,8 @@ declare module '@strapi/types' {
       'api::booking.booking': ApiBookingBooking;
       'api::boss.boss': ApiBossBoss;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::meal.meal': ApiMealMeal;
+      'api::pate.pate': ApiPatePate;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::room.room': ApiRoomRoom;
     }

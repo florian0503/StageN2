@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_moutardes",
+  "info": {
+    "displayName": "Moutarde"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

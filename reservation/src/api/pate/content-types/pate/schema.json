@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "pates",
+  "info": {
+    "singularName": "pate",
+    "pluralName": "pates",
+    "displayName": "pate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Allergen": {
+      "type": "dynamiczone",
+      "components": [
+        "allergen.gluten",
+        "allergen.oeuf"
+      ]
+    },
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal"
+    },
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

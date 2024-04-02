@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_allergen_poisson",
+  "info": {
+    "displayName": "poisson",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}
