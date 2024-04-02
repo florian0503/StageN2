@@ -1,19 +1,18 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "meals",
   "info": {
     "singularName": "meal",
     "pluralName": "meals",
-    "displayName": "Meal",
-    "description": ""
+    "displayName": "meal"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Date": {
-      "type": "datetime"
+    "pate_bolognaise": {
+      "type": "string"
     }
   }
 }
