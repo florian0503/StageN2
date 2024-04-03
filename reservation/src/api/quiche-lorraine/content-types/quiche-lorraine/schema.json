@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pates",
+  "collectionName": "quiche_lorraines",
   "info": {
-    "singularName": "pate",
-    "pluralName": "pates",
-    "displayName": "pate",
+    "singularName": "quiche-lorraine",
+    "pluralName": "quiche-lorraines",
+    "displayName": "Quiche lorraine",
     "description": ""
   },
   "options": {
@@ -23,15 +23,21 @@
         "audios"
       ]
     },
-    "Allergen": {
-      "type": "dynamiczone",
-      "components": [
-        "allergen.gluten",
-        "allergen.oeuf"
-      ]
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal"
     },
     "bool": {
       "type": "boolean"
+    },
+    "allergen": {
+      "type": "dynamiczone",
+      "components": [
+        "allergen.gluten",
+        "allergen.lait",
+        "allergen.oeuf"
+      ]
     }
   }
 }

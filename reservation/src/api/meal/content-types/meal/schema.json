@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "meals",
   "info": {
     "singularName": "meal",
@@ -11,8 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pate_bolognaise": {
+    "Description": {
       "type": "string"
+    },
+    "number_meal": {
+      "type": "integer"
     }
   }
 }
