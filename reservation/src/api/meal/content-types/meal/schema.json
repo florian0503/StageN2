@@ -16,6 +16,12 @@
     },
     "number_meal": {
       "type": "integer"
+    },
+    "aiguillette_de_poulet_pane": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane",
+      "mappedBy": "meal"
     }
   }
 }

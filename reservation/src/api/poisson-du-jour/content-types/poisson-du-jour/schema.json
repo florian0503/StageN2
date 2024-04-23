@@ -1,0 +1,15 @@
+{
+  "kind": "singleType",
+  "collectionName": "poisson_du_jours",
+  "info": {
+    "singularName": "poisson-du-jour",
+    "pluralName": "poisson-du-jours",
+    "displayName": "Poisson du jour",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

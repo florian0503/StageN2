@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_animal_porcs",
+  "info": {
+    "displayName": "Porc",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "origine_france": {
+      "type": "string"
+    }
+  }
+}

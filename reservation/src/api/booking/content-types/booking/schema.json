@@ -15,9 +15,6 @@
     "date": {
       "type": "datetime"
     },
-    "confirmation": {
-      "type": "boolean"
-    },
     "meal": {
       "type": "enumeration",
       "enum": [

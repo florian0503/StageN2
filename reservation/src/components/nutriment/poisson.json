@@ -1,15 +1,12 @@
 {
-  "collectionName": "components_allergen_poisson",
+  "collectionName": "components_nutriment_poissons",
   "info": {
     "displayName": "poisson",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "bool": {
-      "type": "boolean"
-    },
-    "poisson": {
+    "Poisson": {
       "type": "string"
     }
   }

@@ -788,6 +788,45 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAiguilletteDePouletPaneAiguilletteDePouletPane
+  extends Schema.CollectionType {
+  collectionName: 'aiguillette_de_poulet_panes';
+  info: {
+    singularName: 'aiguillette-de-poulet-pane';
+    pluralName: 'aiguillette-de-poulet-panes';
+    displayName: 'Aiguillette_de_poulet_pan\u00E9';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    bool: Attribute.Boolean;
+    meal: Attribute.Relation<
+      'api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane',
+      'oneToOne',
+      'api::meal.meal'
+    >;
+    Friteuse: Attribute.Component<'cuisine.friteuse', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBookingBooking extends Schema.CollectionType {
   collectionName: 'bookings';
   info: {
@@ -801,7 +840,6 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   };
   attributes: {
     date: Attribute.DateTime;
-    confirmation: Attribute.Boolean;
     meal: Attribute.Enumeration<['Apr\u00E8s-midi', 'Soir']>;
     number_customer: Attribute.Integer;
     room: Attribute.Relation<
@@ -832,7 +870,7 @@ export interface ApiBossBoss extends Schema.CollectionType {
   info: {
     singularName: 'boss';
     pluralName: 'bosses';
-    displayName: 'boss';
+    displayName: 'patron';
     description: '';
   };
   options: {
@@ -855,6 +893,44 @@ export interface ApiBossBoss extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::boss.boss', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::boss.boss', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCalamarMarineCalamarMarine extends Schema.CollectionType {
+  collectionName: 'calamar_marines';
+  info: {
+    singularName: 'calamar-marine';
+    pluralName: 'calamar-marines';
+    displayName: 'calamar marin\u00E9';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    bool: Attribute.Boolean;
+    meal: Attribute.Relation<
+      'api::calamar-marine.calamar-marine',
+      'oneToOne',
+      'api::meal.meal'
+    >;
+    plancha: Attribute.Component<'cuisine.plancha', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::calamar-marine.calamar-marine',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::calamar-marine.calamar-marine',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -910,6 +986,11 @@ export interface ApiMealMeal extends Schema.CollectionType {
   attributes: {
     Description: Attribute.String;
     number_meal: Attribute.Integer;
+    aiguillette_de_poulet_pane: Attribute.Relation<
+      'api::meal.meal',
+      'oneToOne',
+      'api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,37 +1001,12 @@ export interface ApiMealMeal extends Schema.CollectionType {
   };
 }
 
-export interface ApiPatePate extends Schema.SingleType {
-  collectionName: 'pates';
+export interface ApiPateALaMeulePateALaMeule extends Schema.SingleType {
+  collectionName: 'pate_a_la_meules';
   info: {
-    singularName: 'pate';
-    pluralName: 'pates';
-    displayName: 'pate';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    image: Attribute.Media;
-    Allergen: Attribute.DynamicZone<['allergen.gluten', 'allergen.oeuf']>;
-    bool: Attribute.Boolean;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::pate.pate', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::pate.pate', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiQuicheLorraineQuicheLorraine extends Schema.SingleType {
-  collectionName: 'quiche_lorraines';
-  info: {
-    singularName: 'quiche-lorraine';
-    pluralName: 'quiche-lorraines';
-    displayName: 'Quiche lorraine';
+    singularName: 'pate-a-la-meule';
+    pluralName: 'pate-a-la-meules';
+    displayName: 'Pate \u00E0 la meule';
     description: '';
   };
   options: {
@@ -959,7 +1015,7 @@ export interface ApiQuicheLorraineQuicheLorraine extends Schema.SingleType {
   attributes: {
     image: Attribute.Media;
     meal: Attribute.Relation<
-      'api::quiche-lorraine.quiche-lorraine',
+      'api::pate-a-la-meule.pate-a-la-meule',
       'oneToOne',
       'api::meal.meal'
     >;
@@ -967,17 +1023,48 @@ export interface ApiQuicheLorraineQuicheLorraine extends Schema.SingleType {
     allergen: Attribute.DynamicZone<
       ['allergen.gluten', 'allergen.lait', 'allergen.oeuf']
     >;
+    cuisine: Attribute.DynamicZone<['cuisine.wok']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::quiche-lorraine.quiche-lorraine',
+      'api::pate-a-la-meule.pate-a-la-meule',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::quiche-lorraine.quiche-lorraine',
+      'api::pate-a-la-meule.pate-a-la-meule',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPoissonDuJourPoissonDuJour extends Schema.SingleType {
+  collectionName: 'poisson_du_jours';
+  info: {
+    singularName: 'poisson-du-jour';
+    pluralName: 'poisson-du-jours';
+    displayName: 'Poisson du jour';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::poisson-du-jour.poisson-du-jour',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::poisson-du-jour.poisson-du-jour',
       'oneToOne',
       'admin::user'
     > &
@@ -1075,12 +1162,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane': ApiAiguilletteDePouletPaneAiguilletteDePouletPane;
       'api::booking.booking': ApiBookingBooking;
       'api::boss.boss': ApiBossBoss;
+      'api::calamar-marine.calamar-marine': ApiCalamarMarineCalamarMarine;
       'api::customer.customer': ApiCustomerCustomer;
       'api::meal.meal': ApiMealMeal;
-      'api::pate.pate': ApiPatePate;
-      'api::quiche-lorraine.quiche-lorraine': ApiQuicheLorraineQuicheLorraine;
+      'api::pate-a-la-meule.pate-a-la-meule': ApiPateALaMeulePateALaMeule;
+      'api::poisson-du-jour.poisson-du-jour': ApiPoissonDuJourPoissonDuJour;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::room.room': ApiRoomRoom;
     }
