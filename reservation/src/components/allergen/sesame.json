@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_sesames",
+  "info": {
+    "displayName": "Sesame"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

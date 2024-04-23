@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_nutriment_poissons",
+  "info": {
+    "displayName": "poisson",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Poisson": {
+      "type": "string"
+    }
+  }
+}

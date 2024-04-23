@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_allergen_glutens",
+  "info": {
+    "displayName": "Gluten",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

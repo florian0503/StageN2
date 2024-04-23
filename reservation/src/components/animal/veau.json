@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_animal_veaus",
+  "info": {
+    "displayName": "Veau",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "origine_france": {
+      "type": "string"
+    }
+  }
+}

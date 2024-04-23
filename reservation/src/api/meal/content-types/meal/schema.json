@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "meals",
   "info": {
     "singularName": "meal",
@@ -11,8 +11,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pate_bolognaise": {
+    "Description": {
       "type": "string"
+    },
+    "number_meal": {
+      "type": "integer"
+    },
+    "aiguillette_de_poulet_pane": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::aiguillette-de-poulet-pane.aiguillette-de-poulet-pane",
+      "mappedBy": "meal"
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_sojas",
+  "info": {
+    "displayName": "Soja"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

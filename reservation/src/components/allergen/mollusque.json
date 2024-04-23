@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_mollusques",
+  "info": {
+    "displayName": "Mollusque"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

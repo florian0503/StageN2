@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_animal_boeufs",
+  "info": {
+    "displayName": "Boeuf",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "origine_france": {
+      "type": "string"
+    }
+  }
+}

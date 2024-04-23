@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calamar_marines",
+  "info": {
+    "singularName": "calamar-marine",
+    "pluralName": "calamar-marines",
+    "displayName": "calamar mariné",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bool": {
+      "type": "boolean"
+    },
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal"
+    },
+    "plancha": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cuisine.plancha"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aiguillette_de_poulet_panes",
+  "info": {
+    "singularName": "aiguillette-de-poulet-pane",
+    "pluralName": "aiguillette-de-poulet-panes",
+    "displayName": "Aiguillette_de_poulet_pané",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bool": {
+      "type": "boolean"
+    },
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal",
+      "inversedBy": "aiguillette_de_poulet_pane"
+    },
+    "Friteuse": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cuisine.friteuse"
+    }
+  }
+}

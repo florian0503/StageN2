@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_crustaces",
+  "info": {
+    "displayName": "Crustaces"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

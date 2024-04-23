@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_oeufs",
+  "info": {
+    "displayName": "Oeuf"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}
