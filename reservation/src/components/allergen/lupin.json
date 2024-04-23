@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_lupins",
+  "info": {
+    "displayName": "Lupin"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

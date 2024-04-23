@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_nutriment_proteines",
+  "info": {
+    "displayName": "protéines",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "origine_france": {
+      "type": "string"
+    }
+  }
+}

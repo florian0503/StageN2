@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_cuisine_planchas",
+  "info": {
+    "displayName": "plancha",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "allergene": {
+      "type": "component",
+      "repeatable": true,
+      "component": "allergen.poisson"
+    },
+    "Nutriment": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nutriment.poisson"
+    }
+  }
+}

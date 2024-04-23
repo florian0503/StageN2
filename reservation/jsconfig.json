@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "target": "ES2021",
+    "checkJs": true,
+    "allowJs": true
+  }
+}
+//il dit qu'il ya une erreur 
+//c'est que l'api de strapi croit que c'est du .TS et non du .Json, 
+//mais il n'y pas de prblm de compilation

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_animal_agneaus",
+  "info": {
+    "displayName": "Agneau",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "origine_france": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_allergen_sulfites",
+  "info": {
+    "displayName": "Sulfite",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

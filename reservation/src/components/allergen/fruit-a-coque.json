@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_allergen_fruit_a_coques",
+  "info": {
+    "displayName": "Fruit_a_coque"
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

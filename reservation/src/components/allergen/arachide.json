@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_allergen_arachides",
+  "info": {
+    "displayName": "Arachide",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bool": {
+      "type": "boolean"
+    }
+  }
+}

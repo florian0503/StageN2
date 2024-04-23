@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "pate_a_la_meules",
+  "info": {
+    "singularName": "pate-a-la-meule",
+    "pluralName": "pate-a-la-meules",
+    "displayName": "Pate à la meule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal"
+    },
+    "bool": {
+      "type": "boolean"
+    },
+    "allergen": {
+      "type": "dynamiczone",
+      "components": [
+        "allergen.gluten",
+        "allergen.lait",
+        "allergen.oeuf"
+      ]
+    },
+    "cuisine": {
+      "type": "dynamiczone",
+      "components": [
+        "cuisine.wok"
+      ]
+    }
+  }
+}
